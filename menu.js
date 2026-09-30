@@ -18,7 +18,7 @@
     "Carros":'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13l1.6-4.6A2 2 0 0 1 6.5 7h11a2 2 0 0 1 1.9 1.4L21 13"/><path d="M3 13h18v4h-2"/><path d="M7 17H3v-4"/><circle cx="7.5" cy="17.3" r="1.7"/><circle cx="16.5" cy="17.3" r="1.7"/></svg>',
     "Motos":'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="5.5" cy="16" r="3.3"/><circle cx="18.5" cy="16" r="3.3"/><path d="M5.5 16l3.2-5H14l2 2h3"/><path d="M8 11h4.5"/></svg>',
     "Jet Skis":'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 16c1.4 0 1.4 1 2.9 1s1.5-1 2.9-1 1.5 1 2.9 1 1.5-1 2.9-1 1.5 1 2.9 1"/><path d="M4.5 15.5L6.5 11h6.5l3 3 2.5.4"/></svg>',
-    "Acessórios":'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6.2a3.8 3.8 0 0 0-5.1 5L4.4 16.7 7.3 19.6l5.5-5.5a3.8 3.8 0 0 0 5-5.1l-2.2 2.2-2-.5-.5-2z"/></svg>'
+    "Extras":'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7.6l9-4.6 9 4.6v8.8l-9 4.6-9-4.6z"/><path d="M3 7.6l9 4.6 9-4.6"/><path d="M12 12.2V21"/></svg>'
   };
   var EMPTY_IC = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13l1.6-4.6A2 2 0 0 1 6.5 7h11a2 2 0 0 1 1.9 1.4L21 13"/><path d="M3 13h18v4h-2"/><path d="M7 17H3v-4"/><circle cx="7.5" cy="17.3" r="1.6"/><circle cx="16.5" cy="17.3" r="1.6"/></svg>';
 
