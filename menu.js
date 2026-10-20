@@ -223,7 +223,20 @@
     document.addEventListener('keydown',function(e){if(e.key==='Escape')fechar();});
   }
 
+  // --- ordenação dos modelos: marca por nome (1ª palavra), versões por ANO crescente, depois a versão ---
+  function ppfYear(n){var m;                                         // ano no FINAL do nome; \b evita colar no nº do modelo (ex.: Tank 300 25)
+    if((m=n.match(/\b(20\d{2})\s*[-\/ ]\s*20\d{2}\s*$/)))return +m[1]; // 2025-2027
+    if((m=n.match(/\b(\d{2})\s*[\/ ]\s*\d{2}\s*$/)))return 2000+(+m[1]);// 20/25 ou 25 26
+    if((m=n.match(/\b(20\d{2})\s*$/)))return +m[1];                    // 2026 (4 díg. só se começar com 20)
+    if((m=n.match(/\b(\d{2})\s*$/)))return 2000+(+m[1]);               // 26
+    return 9999;}
+  function ppfStrip(n){return n.replace(/\s*(\b20\d{2}\s*[-\/ ]\s*20\d{2}|\b\d{2}\s*[\/ ]\s*\d{2}|\b20\d{2}|\b\d{2})\s*$/,'').replace(/\s+/g,' ').trim().toLowerCase();}
+  function ppfBase(n){var p=n.trim().split(/\s+/);return (p[0]||'').toLowerCase();}
+  function ppfCmp(a,b){var ba=ppfBase(a.n),bb=ppfBase(b.n);if(ba!==bb)return ba<bb?-1:1;var ya=ppfYear(a.n),yb=ppfYear(b.n);if(ya!==yb)return ya-yb;var sa=ppfStrip(a.n),sb=ppfStrip(b.n);return sa<sb?-1:(sa>sb?1:0);}
+  function ppfSortData(DATA){try{(DATA||[]).forEach(function(tp){(tp.marcas||[]).forEach(function(mc){if(mc.modelos&&mc.modelos.length)mc.modelos.sort(ppfCmp);});});}catch(e){}return DATA;}
+
   function boot(DATA){
+    ppfSortData(DATA);
     if(build(DATA)) return;
     var tries=0, iv=setInterval(function(){tries++;if(build(DATA)||tries>40)clearInterval(iv);},300);
   }
